@@ -24,7 +24,7 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
-      - name: Output information
+      - name: Output informatio
         run: |
           echo "MONGDODB_USERNAME: ${{env.MONGDODB_USER_NAME}}"
           echo "Repository MONG"
