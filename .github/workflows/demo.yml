@@ -24,7 +24,8 @@ jobs:
       - name: Test code
         run: npm run test
       - name: Output information
-        run: echo "MONGDODB_USERNAME: ${{env.MONGDODB_USER_NAME}}"
+        run: |
+          echo "MONGDODB_USERNAME: ${{env.MONGDODB_USER_NAME}}"
   build:
     needs: test
     runs-on: ubuntu-latest
