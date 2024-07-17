@@ -4,8 +4,9 @@ on:
     branches:
       - main
 env:
-  MONGODB_DB_NAME: gha-demo
-  MONGDODB_USER_NAME: gha-demo
+  MONGODB_DB_NAME: db_name
+  MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+  MONGDODB_USER_NAME:  ${{secrets.MONGODB_USERNAME}}
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
       - name: Output information
         run: |
           echo "MONGDODB_USERNAME: ${{env.MONGDODB_USER_NAME}}"
+          echo "Repository MONG"
   build:
     needs: test
     runs-on: ubuntu-latest
