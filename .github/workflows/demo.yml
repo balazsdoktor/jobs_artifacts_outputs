@@ -4,6 +4,7 @@ on:
     branches:
       - main
 env:
+  environment: testing
   MONGODB_DB_NAME: db_name
   MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
   MONGDODB_USER_NAME:  ${{secrets.MONGODB_USERNAME}}
