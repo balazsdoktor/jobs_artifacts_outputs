@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+env:
+  MONGODB_DB_NAME: gha-demo
+  MONGDODB_USER_NAME: gha-demo
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,6 +23,8 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
+      - name: Output information
+        run: echo "MONGDODB_USERNAME: ${{env.MONGDODB_USER_NAME}}"
   build:
     needs: test
     runs-on: ubuntu-latest
